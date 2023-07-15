@@ -1,0 +1,29 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+  About Me
+{% endblock %}
+
+{% block body %}
+
+<h1>Данные пользователя</h1>
+    {% if user.is_authenticated %}
+        <p>Никнейм: {{ user.username }}</p>
+        <p>Имя: {{user.first_name }} </p>
+        <p>Фамилия: {{ user.last_name }}</p>
+        <p>Почта: {{ user.email }}</p>
+        <p>Обо мне: {{ profile.bio }}</p>
+    {% if profile.avatar %}
+        <img src="{{ profile.avatar.url }}" alt="{{ profile.user.username }}">
+        {% else %}
+        <h3>Без аватар</h3>
+    {% endif %}
+    {% if user.is_superuser  %}
+        <div>
+            <a href="{% url 'myauth:about-me_update' pk=profile.pk  %}">Редактировать профиль</a>
+        </div>
+    {% endif %}
+    {% else %}
+    <h3>Пользователь не найден</h3>
+    {% endif %}
+{% endblock %}

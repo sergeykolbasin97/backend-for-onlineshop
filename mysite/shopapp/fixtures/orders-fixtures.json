@@ -1,0 +1,16 @@
+[
+  {
+    "model": "shopapp.order",
+    "pk": 3,
+    "fields": {
+      "delivery_address": "Zaitseva 67",
+      "promocode": "Promo",
+      "created_at": "2023-06-19T21:56:24.250Z",
+      "user": 1,
+      "products": [
+        3,
+        4
+      ]
+    }
+  }
+]

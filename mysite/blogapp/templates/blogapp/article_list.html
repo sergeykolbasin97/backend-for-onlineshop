@@ -1,0 +1,36 @@
+{% extends 'blogapp/base.html' %}
+
+{% block title %}
+  Список статей
+{% endblock %}
+
+{% block body %}
+  <h1>Список статей</h1>
+  {% if articles %}
+    {% for article in articles %}
+      <div>
+          <p><a href='{% url "blogapp:blog_details" pk=article.pk %}'><h3>Cтатья №{{ article.pk }}</h3></a></p>
+        <p>Заголовок статьи: {{ article.title }}</p>
+        <p>Дата публикации: {{ article.pub_date }}</p>
+        <p>Автор cтатьи: {{ article.author.name }} </p>
+        <p>Категория: {{ article.category.name }}</p>
+        <p>Теги:
+            <ul>
+              {% for tag in article.tag.all %}
+                <li>{{ tag.name }} </li>
+              {% endfor %}
+
+            </ul></p>
+      </div>
+    {% endfor %}
+    </div>
+
+  {% else %}
+    <h3>Статей нет</h3>
+  {% endif %}
+<div>
+    <a href='{% url "blogapp:blog_create" %}'>
+        Создать новую статью
+    </a>
+</div>
+{% endblock %}

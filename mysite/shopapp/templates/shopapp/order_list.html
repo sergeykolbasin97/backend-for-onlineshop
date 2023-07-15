@@ -1,0 +1,51 @@
+{% extends 'shopapp/base.html' %}
+{% load i18n %}
+
+{% block title %}
+  Список заказов
+{% endblock %}
+
+{% block body %}
+  <h1>{% translate 'Заказы' %}:</h1>
+  {% if orders %}
+    {% blocktranslate count order_count=orders|length %}
+    <h2>В списке 1 заказ</h2>
+    {% plural %}
+    <h2>В списке {{ order_count }} заказов</h2>
+    {% endblocktranslate %}
+    <div>
+      {% for order in orders %}
+        <div>
+          <p> <a href='{% url "shopapp:order_detail" pk=order.pk %}'>Детали заказа №{{ order.pk }}: </a></p>
+          <p>Закзачик {% firstof order.user.first_name order.user.username %}</p>
+          <p>Промокод: <code>{{ order.promocode }}</code></p>
+          <p>Адрес доставки: {{ order.delivery_address }}</p>
+          <div>
+            Товары в заказе:
+            <ul>
+              {% for product in order.products.all %}
+                <li>{{ product.name }} for ${{ product.price }}</li>
+              {% endfor %}
+
+            </ul>
+          </div>
+
+        </div>
+      {% endfor %}
+
+    </div>
+  {% else %}
+    <h3>No orders yet</h3>
+  {% endif %}
+
+<div>
+    <a href='{% url "shopapp:order_create" %}'>
+        Создать новый заказ
+    </a>
+</div>
+<div>
+    <a href='{% url "shopapp:user_orders" %}'>
+        Список Ваших({{ user.username }}) заказов
+    </a>
+</div>
+{% endblock %}

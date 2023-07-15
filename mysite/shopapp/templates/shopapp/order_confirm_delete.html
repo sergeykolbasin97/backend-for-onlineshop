@@ -1,0 +1,25 @@
+{% extends 'shopapp/base.html' %}
+
+{% block title %}
+    Delete order #{{ order.pk }}
+{% endblock %}
+
+{% block body %}
+<h1>Вы уверены, что хотите удалить 'Заказ {{ order.pk }}' </h1>
+<div>
+    <a href='{% url "shopapp:order_detail" pk=order.pk %}'>
+        Вернуться к заказу
+    </a>
+</div>
+<div>
+    <form method="post" >
+    {% csrf_token %}
+        {{ form.as_p }}
+                <button type="submit">
+            Удалить
+        </button>
+        </form>
+    </div>
+
+
+{% endblock %}

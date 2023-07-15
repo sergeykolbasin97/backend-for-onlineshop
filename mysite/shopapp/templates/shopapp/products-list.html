@@ -1,0 +1,44 @@
+{% extends 'shopapp/base.html' %}
+{% load i18n %}
+
+{% block title %}
+  {% translate 'Список товаров' %}
+{% endblock %}
+
+{% block body %}
+  <h1>{% translate 'Список товаров' %}</h1>
+  {% if products %}
+    {% blocktranslate count product_count=products|length %}
+    <h2>В списке всего 1 продукт</h2>
+    {% plural %}
+    <h2>В списке всего {{ product_count }} продукта</h2>
+    {% endblocktranslate %}
+  <div>
+    {% for product in products %}
+      <div>
+        <p> <a href='{% url "shopapp:product_details" pk=product.pk %}'>{% translate 'Название' context 'Название товара' %}: {{ product.name }}</a></p>
+        <p>{% translate 'Стоимость' context 'Стоимость товара' %}: {{ product.price }}</p>
+        {% translate 'Скидки нет' as no_discount %}
+        <p>{% translate 'Скидка' %}: {% firstof product.discount no_discount %}</p>
+        <p>{% translate 'ID Владельца' %}: {{ product.created_by_id }}</p>
+            {% if product.preview %}
+        <img src="{{ product.preview.url }}" alt="{{ product.preview.name }}">
+            {% endif %}
+      </div>
+    {% endfor %}
+    </div>
+    <div>
+    <a href='{% url "shopapp:product_create" %} '>
+        {% translate 'Создать новый продукт' %}</a>
+    </div>
+  {% else %}
+    {% url "shopapp:product_create" as create_form %}
+    {% blocktranslate %}
+    <h3>Товаров нет</h3>
+      <div>
+      <a href='{{ create_form }}'>Создать первый продукт</a>
+      </div>
+    {% endblocktranslate %}
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'blogapp/base.html' %}
+
+{% block title %}
+    Создание статьи
+{% endblock %}
+
+{% block body %}
+<h1>Новая статья </h1>
+<div>
+    <form method="post" enctype='multipart/form-data' >
+    {% csrf_token %}
+        {{ form.as_p }}
+                <button type="submit">
+            Создать статью
+        </button>
+        </form>
+    </div>
+<div>
+    <a href='{% url "blogapp:blog_list" %}'>
+        Список статей
+    </a>
+</div>
+
+{% endblock %}

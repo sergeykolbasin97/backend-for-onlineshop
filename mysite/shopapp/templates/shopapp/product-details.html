@@ -1,0 +1,37 @@
+{% extends 'shopapp/base.html' %}
+{% load i18n %}
+{% block title %}
+  {% translate 'Товар' %} {{ product.pk }}
+{% endblock %}
+
+{% block body %}
+{% firstof product.discription 'отсутствует' as no %}
+<h1> {% translate 'Информация о товаре' %}</h1>
+<h3>{% translate 'Название' %}: {{ product.name }}</h3>
+<div>
+  <div>{% translate 'Стоимость' %}: {{product.price }}</div>
+  <div>{% translate 'Скидка' %}: {{ product.discount }}</div>
+  <div>{% translate 'Дата создания' %}: {{ product.created_at }}</div>
+  <div>{% translate 'Описание' %}: {{ no }}</div>
+    {% if product.preview %}
+        <img src="{{ product.preview.url }}" alt="{{ product.preview.name }}">
+    {% endif %}
+    <div>{% translate 'Архивирован' %}: {{ product.archived }}</div>
+
+</div>
+
+{% url 'shopapp:product_update' pk=product.pk as update %}
+{% url 'shopapp:product_archived' pk=product.pk as archived %}
+{% url "shopapp:products_list" as back %}
+    {% blocktranslate %}
+    <div>
+        <a href="{{ update }}">Редактировать</a>
+    </div>
+    <div>
+        <a href="{{ archived }}">Архивировать</a>
+    </div>
+    <div>
+        <a href='{{ back }}'>Вернуться к списку товаров</a>
+    </div>
+    {% endblocktranslate %}
+{% endblock %}

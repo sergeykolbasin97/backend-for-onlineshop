@@ -1,0 +1,23 @@
+{% extends 'blogapp/base.html' %}
+
+{% block title %}
+  Статья {{ article.pk }}
+{% endblock %}
+
+{% block body %}
+<h1>Статья {{ article.pk }}</h1>
+<h3>Автор: {{ article.author.name }}</h3>
+<div>Коротко об авторе: {{ article.author.bio }} </div>
+
+<div>
+  <div>{{ article.content }}</div>
+  <div>Дата публикации: {{ article.pub_date }}</div>
+  <div>Категория статьи: {{ article.category.name }}</div>
+</div>
+
+<div>
+    <a href='{% url "blogapp:blog_list" %}'>
+        Список статей
+    </a>
+</div>
+{% endblock %}

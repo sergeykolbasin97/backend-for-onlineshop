@@ -1,0 +1,28 @@
+{% extends 'shopapp/base.html' %}
+{% load i18n %}
+{% block title %}
+  Order #{{ order.pk }}
+{% endblock %}
+
+{% block body %}
+<h1> Детали заказа № {{ order.pk }}</h1>
+       <div>
+          <p>Заказчик {% firstof order.user.first_name order.user.username %}</p>
+          <p>Промокод: <code>{{ order.promocode }}</code></p>
+          <p>Адрес доставки: {{ order.delivery_address }}</p>
+          </div>
+{% url 'shopapp:order_update' pk=order.pk as update %}
+{% url 'shopapp:order_delete' pk=order.pk as delete %}
+{% url "shopapp:orders_list" as back %}
+    {% blocktranslate %}
+    <div>
+        <a href="{{ update }}">Редактировать</a>
+    </div>
+    <div>
+        <a href="{{ delete }}">Удалить заказ</a>
+    </div>
+    <div>
+        <a href='{{ back }}'>Вернуться к списку заказов</a>
+    </div>
+    {% endblocktranslate %}
+{% endblock %}

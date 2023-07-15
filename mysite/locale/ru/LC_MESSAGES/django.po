@@ -1,0 +1,252 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-27 18:10+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\myauth\views.py:19
+msgid "Hi"
+msgstr "Привет, мужик!"
+
+#: .\mysite\settings.py:129
+msgid "English"
+msgstr ""
+
+#: .\mysite\settings.py:130
+msgid "Russian"
+msgstr "Русский"
+
+#: .\shopapp\models.py:15
+msgid "Product"
+msgstr "Продукт"
+
+#: .\shopapp\models.py:16
+msgid "Products"
+msgstr "Продукты"
+
+#: .\shopapp\models.py:33
+msgid "Order"
+msgstr "Заказ"
+
+#: .\shopapp\models.py:34
+msgid "Orders"
+msgstr "Заказы"
+
+#: .\shopapp\templates\shopapp\order_detail.html:17
+#, python-format
+msgid ""
+"\n"
+"    <div>\n"
+"        <a href=\"%(update)s\">Редактировать</a>\n"
+"    </div>\n"
+"    <div>\n"
+"        <a href=\"%(delete)s\">Удалить заказ</a>\n"
+"    </div>\n"
+"    <div>\n"
+"        <a href='%(back)s'>Вернуться к списку заказов</a>\n"
+"    </div>\n"
+"    "
+msgstr ""
+"\n"
+"    <div>\n"
+"        <a href=\"%(update)s\">Редактировать</a>\n"
+"    </div>\n"
+"    <div>\n"
+"        <a href=\"%(delete)s\">Удалить заказ</a>\n"
+"    </div>\n"
+"    <div>\n"
+"        <a href='%(back)s'>Вернуться к списку заказов</a>\n"
+"    </div>\n"
+"    "
+
+#: .\shopapp\templates\shopapp\order_list.html:9
+msgid "Заказы"
+msgstr "Заказы"
+
+#: .\shopapp\templates\shopapp\order_list.html:11
+#, python-format
+msgid ""
+"\n"
+"    <h2>В списке 1 заказ</h2>\n"
+"    "
+msgid_plural ""
+"\n"
+"    <h2>В списке %(order_count)s заказов</h2>\n"
+"    "
+msgstr[0] ""
+"\n"
+"    <h2>В списке всего 1 заказ:</h2>>\n"
+"    "
+msgstr[1] ""
+"\n"
+"    <h2>В списке всего %(order_count)s заказа:</h2>>\n"
+"    "
+msgstr[2] ""
+"\n"
+"    <h2>В списке всего %(order_count)s заказов:</h2>>\n"
+"    "
+
+#: .\shopapp\templates\shopapp\product-details.html:4
+msgid "Товар"
+msgstr "Товар"
+
+#: .\shopapp\templates\shopapp\product-details.html:9
+msgid "Информация о товаре"
+msgstr "Информация о товаре"
+
+#: .\shopapp\templates\shopapp\product-details.html:10
+msgid "Название"
+msgstr "Название"
+
+#: .\shopapp\templates\shopapp\product-details.html:12
+msgid "Стоимость"
+msgstr "Стоимость"
+
+#: .\shopapp\templates\shopapp\product-details.html:13
+#: .\shopapp\templates\shopapp\products-list.html:22
+msgid "Скидка"
+msgstr "Скидка"
+
+#: .\shopapp\templates\shopapp\product-details.html:14
+msgid "Дата создания"
+msgstr "Дата создания"
+
+#: .\shopapp\templates\shopapp\product-details.html:15
+msgid "Описание"
+msgstr "Описание"
+
+#: .\shopapp\templates\shopapp\product-details.html:19
+msgid "Архивирован"
+msgstr "Архивирован"
+
+#: .\shopapp\templates\shopapp\product-details.html:26
+#, python-format
+msgid ""
+"\n"
+"    <div>\n"
+"        <a href=\"%(update)s\">Редактировать</a>\n"
+"    </div>\n"
+"    <div>\n"
+"        <a href=\"%(archived)s\">Архивировать</a>\n"
+"    </div>\n"
+"    <div>\n"
+"        <a href='%(back)s'>Вернуться к списку товаров</a>\n"
+"    </div>\n"
+"    "
+msgstr ""
+"\n"
+"    <div>\n"
+"        <a href=\"%(update)s\">Редактировать</a>\n"
+"    </div>\n"
+"    <div>\n"
+"        <a href=\"%(archived)s\">Архивировать</a>\n"
+"    </div>\n"
+"    <div>\n"
+"        <a href='%(back)s'>Вернуться к списку товаров</a>\n"
+"    </div>\n"
+"    "
+
+#: .\shopapp\templates\shopapp\products-list.html:5
+#: .\shopapp\templates\shopapp\products-list.html:9
+msgid "Список товаров"
+msgstr "Список товаров"
+
+#: .\shopapp\templates\shopapp\products-list.html:11
+#, python-format
+msgid ""
+"\n"
+"    <h2>В списке всего 1 продукт</h2>\n"
+"    "
+msgid_plural ""
+"\n"
+"    <h2>В списке всего %(product_count)s продукта</h2>\n"
+"    "
+msgstr[0] ""
+"\n"
+"    <h2>В списке всего 1 продукт:</h2>>\n"
+"    "
+msgstr[1] ""
+"\n"
+"    <h2>В списке всего %(product_count)s продукта</h2>\n"
+"    "
+msgstr[2] ""
+"\n"
+"    <h2>В списке всего %(product_count)s продуктов:</h2>\n"
+"    "
+
+#: .\shopapp\templates\shopapp\products-list.html:19
+msgctxt "Название товара"
+msgid "Название"
+msgstr "Название"
+
+#: .\shopapp\templates\shopapp\products-list.html:20
+msgctxt "Стоимость товара"
+msgid "Стоимость"
+msgstr "Стоимость"
+
+#: .\shopapp\templates\shopapp\products-list.html:21
+msgid "Скидки нет"
+msgstr "Скидки нет"
+
+#: .\shopapp\templates\shopapp\products-list.html:23
+msgid "ID Владельца"
+msgstr "ID Владельца"
+
+#: .\shopapp\templates\shopapp\products-list.html:32
+msgid "Создать новый продукт"
+msgstr "Создать новый продукт"
+
+#: .\shopapp\templates\shopapp\products-list.html:36
+#, python-format
+msgid ""
+"\n"
+"    <h3>Товаров нет</h3>\n"
+"      <div>\n"
+"      <a href='%(create_form)s'>Создать первый продукт</a>\n"
+"      </div>\n"
+"    "
+msgstr ""
+
+#, python-format
+#~ msgid ""
+#~ "\n"
+#~ "<h1> Информация о товаре</h1>\n"
+#~ "<h3>Название: %(product.name)s</h3>\n"
+#~ "<div>\n"
+#~ "  <div>Стоимость: %(product.price)s</div>\n"
+#~ "  <div>Скидка: %(product.discount)s</div>\n"
+#~ "  <div>Дата создания: %(product.created_at)s</div>\n"
+#~ "  <div>Описание: %(no)s</div>\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "<h1> Информация о товаре</h1>\n"
+#~ "<h3>Название: %(product.name)s</h3>\n"
+#~ "<div>\n"
+#~ "  <div>Стоимость: %(product.price)s</div>\n"
+#~ "  <div>Скидка: %(product.discount)s</div>\n"
+#~ "  <div>Дата создания: %(product.created_at)s</div>\n"
+#~ "  <div>Описание: %(no)s</div>\n"
+#~ "    "
+
+#, python-format
+#~ msgid ""
+#~ "\n"
+#~ "<h1> Детали заказа № %(order.pk)s</h1>\n"
+#~ msgstr "Детали заказа"
